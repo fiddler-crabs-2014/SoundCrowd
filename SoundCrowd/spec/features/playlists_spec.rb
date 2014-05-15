@@ -7,9 +7,8 @@ describe "Playlists", :js => true do
     context "with a valid name" do
       it "will be appended to the playlist index page" do
         visit new_playlist_path(playlist)
-        fill_in "Name", :with => "Bucks SICK PLIST"
+        fill_in "Name", :with => playlist.name
         click_on "Create Playlist"
-        visit playlists_path
         expect(page).to have_content playlist.name
       end
     end

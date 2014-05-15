@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<%=form_for @playlist do |f| %>
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <%=f.submit "Create Playlist"%>
+<%end%>
