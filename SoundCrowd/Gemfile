@@ -35,15 +35,15 @@ gem 'awesome_print'
 
 
 group :development, :test do
-gem 'rspec-rails'
-gem 'shoulda-matchers'
-gem 'pry-debugger'
-gem 'pry-rails'
-gem 'faker'
-gem 'factory_girl_rails'
-gem 'capybara'
-gem 'database_cleaner'
-gem 'selenium-webdriver'
+	gem 'rspec-rails'
+	gem 'shoulda-matchers'
+	gem 'pry-debugger'
+	gem 'pry-rails'
+	gem 'faker'
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'selenium-webdriver'
 end
 
 # Use unicorn as the app server
