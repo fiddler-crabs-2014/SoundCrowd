@@ -1,6 +1,8 @@
 require 'spec_helper'
+require 'pry-debugger'
+require 'pry'
 describe PlaylistsController do
-  let!(:playlist) { create :playlist }
+  let(:playlist) { create :playlist }
   context "#index" do
     it "is successful" do
       get :index
@@ -16,18 +18,27 @@ describe PlaylistsController do
   end
 
   context "#create" do
-    it "with valid attributes" do
-      expect {
-        post :create, :playlist => attributes_for(playlist_params)
-        expect(response).to be_success
-      }.to change { Playlist.count }.by(1)
-    end
+    context "with valid attributes" do
+      it "saves to the database" do
+        expect {
+          post :create, :playlist => FactoryGirl.attributes_for(:playlist)
+        }.to change { Playlist.count }.by(1)
+      end
 
-    it "with invalid attributes" do
-      expect {
-        post :create
-        expect(response.status).to eq 422
-      }.to_not change {Playlist.count}
+      it "responds with success" do
+        expect(response).to be_success
+      end
+    end
+    context "with invalid attributes" do
+      it "should not save to the database" do
+        expect {
+          post :create, :playlist => {name: ""}
+        }.to_not change {Playlist.count}
+      end
+
+      # it "should not respond with success" do
+      #   expect(response.status).to eq 422
+      # end
     end
   end
 end
