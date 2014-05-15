@@ -32,6 +32,10 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
+    resources :playlists do
+      resources :songs
+    end
+
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
