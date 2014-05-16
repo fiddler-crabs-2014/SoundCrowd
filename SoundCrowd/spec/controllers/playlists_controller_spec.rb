@@ -35,10 +35,14 @@ describe PlaylistsController do
           post :create, :playlist => {name: ""}
         }.to_not change {Playlist.count}
       end
+    end  
+  end
 
-      # it "should not respond with success" do
-      #   expect(response.status).to eq 422
-      # end
+  context "#show" do
+    it "shows the correct playlist" do
+      get :show, :id => playlist.id
+      expect(assigns(:playlist)).to eq playlist
     end
+
   end
 end
