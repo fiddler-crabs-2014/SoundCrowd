@@ -16,8 +16,6 @@ end
 
 describe "User can visit signin page" do
   context "and a signin form" do
-    let(:user){ create :user }
-    let!(:previous_user){ User.create(email: "example@gmail.com", password:"secret" ) }
     it "can be seen" do
       visit new_user_path
       expect(page).to have_content('Email')
@@ -29,29 +27,20 @@ describe "User can visit signin page" do
       fill_in "Email", :with => "test@email.com"
       fill_in "Password", :with => "password"
     end
-
-    it "will create a user with valid info" do
-      expect{
-        visit new_user_path
-        fill_in "Email", :with => user.email
-        fill_in "Password", :with => user.password
-        find_button('Create Account').click
-        }.to change{ User.count}.by(1)
-    end
-
-    it "will not create a user with invalid info" do
-      expect{
-        visit new_user_path
-        fill_in "Email", :with => previous_user.email
-        fill_in "Password", :with => previous_user.password
-        find_button('Create Account').click
-        }.to_not change{ User.count }
-    end
-
-    it "can be submitted and redirected to their page" do
-
-    end
-
   end
 end
 
+
+describe "User can view their own profile page" do
+  let!(:user){ create :user }
+  it "User's email can be seen" do
+    visit user_path(user)
+    expect(page).to have_content(user.email)
+  end
+
+  it "User's playlist can be seen" do
+    visit user_path(user)
+    expect(page).to have_content("Playlists")
+  end
+
+end
