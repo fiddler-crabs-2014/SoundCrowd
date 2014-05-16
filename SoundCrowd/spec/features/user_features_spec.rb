@@ -42,5 +42,20 @@ describe "User can view their own profile page" do
     visit user_path(user)
     expect(page).to have_content("Playlists")
   end
+end
 
+describe "User can sign in" do
+  let!(:user) { create :user }
+  context "from homepage" do
+    it "has a sign in form" do
+      visit root_path
+      expect(page).to have_content('Email')
+      expect(page).to have_content('Password')
+      fill_in "Email", :with => user.email
+      fill_in "Password", :with => user.password
+      find_button('Sign In').click
+      expect(page).to eq user_path(user)
+      expect(page).to have_content(user.email)
+    end
+  end
 end
