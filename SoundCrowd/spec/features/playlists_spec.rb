@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Playlists", :js => true do
+describe "Playlists", :js => false do
   let!(:playlist){ create :playlist }
   let!(:playlists) { [playlist, create(:playlist)] }
 
@@ -26,17 +26,17 @@ describe "Playlists", :js => true do
       end
     end
   end
-  
-  describe "User can view all playlists" do 
+
+  describe "User can view all playlists" do
     it "can see a list of all playlists that have been created" do
       visit playlists_path
       playlists.each do |playlist|
         expect(page).to have_content playlist.name
       end
     end
-  end 
+  end
 
-  describe "User can view a playlist" do 
+  describe "User can view a playlist" do
     it "can navigate to the correct playlist from the playlists page" do
       visit playlists_path
       click_on playlist.name
@@ -46,7 +46,7 @@ describe "Playlists", :js => true do
     end
   end
 
-  describe "User can edit a playlist" do 
+  describe "User can edit a playlist" do
     it "can navigate to the edit page from the current path" do
       visit playlist_path(playlist)
       click_on "Edit"
