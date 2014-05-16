@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root :to => "users#index"
   resources :users
+  match '/create_session', to: "users#create_session", via: 'post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
