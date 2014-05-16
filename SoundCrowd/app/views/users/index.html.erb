@@ -1,10 +1,11 @@
-<%= form_for @user, url: { action: 'create_session' } do |f| %>
-  <%= f.label :email  %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  <%= f.submit("Sign In") %>
-<% end %>
+<%= form_for @session, url: { action: 'create_session' } do |f| %>
+    <%= f.label :email  %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= f.submit("Sign In") %>
+  <% end %>
 
 
-<%= link_to "Register", new_user_path %>
+  <%= link_to "Register", new_user_path %>
+

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -18,16 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def create_session
-    binding.pry
-    @user = User.find_by_email params[:user][:email]
-    password = params[:password]
-    if @user.authenticate(params[:user][:password])
-      redirect_to @user
-    else
-      render :index
-    end
+  def show
+    @user = User.find(params[:id])
   end
+
 
   private
 
