@@ -26,6 +26,7 @@ describe PlaylistsController do
       end
 
       it "responds with success" do
+        post :create, :playlist => FactoryGirl.attributes_for(:playlist)
         expect(response).to be_success
       end
     end
@@ -35,7 +36,7 @@ describe PlaylistsController do
           post :create, :playlist => {name: ""}
         }.to_not change {Playlist.count}
       end
-    end  
+    end
   end
 
   context "#show" do

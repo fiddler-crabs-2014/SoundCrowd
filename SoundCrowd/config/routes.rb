@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root :to => "sessions#index"
   # root :to => "users#index"
-  resources :users
+
+  resources :users do
+    resources :playlists
+  end
+
+  resources :songs
   # match '/create', to: "sessions#create", via: 'post'
   # match '/sign_out', to: "sessions#destroy", via: 'delete'
   resources :sessions, :only => [:create, :destroy]
@@ -37,9 +42,6 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-
-    resources :playlists
-    resources :songs
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
