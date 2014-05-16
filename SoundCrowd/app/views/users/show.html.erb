@@ -1,2 +1,4 @@
 <%= @user.email %>
-Playlists
+
+<%= link_to "My Playists", playlist_path(@user) %>
+<%= link_to "Add a new Playist", new_playlist_path(@user) %>

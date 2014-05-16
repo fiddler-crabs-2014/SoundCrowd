@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/controllers/playlists_controller.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/controllers/playlists_controller.rb": [
         1,
         null,
         1,
@@ -46,17 +46,17 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/controllers/application_controller.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/controllers/songs_controller_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/controllers/songs_controller_spec.rb": [
 
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/controllers/user_controller_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/controllers/user_controller_spec.rb": [
         1,
         null,
         1,
@@ -104,7 +104,7 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/controllers/users_controller.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -140,7 +140,7 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/features/playlists_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/features/playlists_spec.rb": [
         1,
         null,
         1,
@@ -210,10 +210,10 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/features/songs_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/features/songs_spec.rb": [
 
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/features/user_features_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/features/user_features_spec.rb": [
         1,
         null,
         1,
@@ -276,7 +276,7 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/models/playlist_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/models/playlist_spec.rb": [
         1,
         null,
         1,
@@ -285,26 +285,26 @@
         2,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/models/playlist.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/models/playlist.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/models/song_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/models/song_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/models/song.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/models/song.rb": [
         1,
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/spec/models/user_spec.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -314,7 +314,7 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/models/user.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/models/user.rb": [
         1,
         1,
         1,
@@ -333,7 +333,7 @@
         null,
         null
       ],
-      "/Users/apprentice/SoundCrowd/SoundCrowd/app/controllers/sessions_controller.rb": [
+      "/Users/ShaunMcGeever/Desktop/SoundCrowd/SoundCrowd/app/controllers/sessions_controller.rb": [
         1,
         null,
         null,
@@ -360,6 +360,6 @@
         null
       ]
     },
-    "timestamp": 1400215415
+    "timestamp": 1400250529
   }
 }

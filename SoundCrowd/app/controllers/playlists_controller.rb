@@ -27,7 +27,7 @@ class PlaylistsController < ApplicationController
 
   def update
     @playlist = Playlist.find(params[:id])
-    if @playlist.update_attributes(params[:name])
+    if @playlist.update_attributes(playlist_params)
       redirect_to playlists_path
     else
       render :edit, :notice => "Please enter"

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Playlists", :js => false do
+describe "Playlists", :js => true do
   let!(:playlist){ create :playlist }
   let!(:playlists) { [playlist, create(:playlist)] }
 
