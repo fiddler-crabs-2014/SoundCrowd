@@ -4,14 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :playlists
 
-  def authenticate(password)
-    if self.password == password
-      return true
-    else
-      return false
-    end
-  end
-
-
+  has_secure_password
 
 end

@@ -1,5 +1,6 @@
 <h1> Playlists </h1>
 <% @playlists.each do |playlist| %>
-<h3><%= link_to playlist.name, user_playlist_path(playlist) %></h3>
+
+<h3><%= link_to playlist.name, [current_user, playlist] %></h3>
 <% end %>
 

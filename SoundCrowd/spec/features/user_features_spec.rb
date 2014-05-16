@@ -40,7 +40,7 @@ describe "User can view their own profile page" do
 
   it "User's playlist can be seen" do
     visit user_path(user)
-    expect(page).to have_content("Playlists")
+    expect(page).to have_content("My Playlists")
   end
 end
 

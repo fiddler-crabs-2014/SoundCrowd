@@ -1,16 +1,15 @@
 class PlaylistsController < ApplicationController
-
+  before_action :signed_in_user, except: [:index]
   def index
     @playlists = Playlist.all
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @playlist = @user.playlists.new
+    @playlist = current_user.playlists.new
   end
 
   def create
-    @playlist = Playlist.new(playlist_params)
+    @playlist = current_user.playlists.new(playlist_params)
     if @playlist.save
       #corrected nested path name
       #playlists_paths to user_playlists_path

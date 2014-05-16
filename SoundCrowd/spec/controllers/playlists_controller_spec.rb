@@ -4,6 +4,8 @@ require 'pry'
 describe PlaylistsController do
   let(:playlist) { create :playlist }
   let(:user) { create :user }
+
+  before { session[:user_id] = user.id }
   describe "#index" do
     it "is successful" do
       get :index, user_id: user.id
@@ -12,6 +14,7 @@ describe PlaylistsController do
   end
 
   context "#new" do
+    # before { session[:user_id] = user.id }
     it "is successful" do
       get :new, user_id: user.id
       expect(response).to be_success

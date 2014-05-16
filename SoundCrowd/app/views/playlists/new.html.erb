@@ -2,7 +2,8 @@
   <%= flash[:notice] %>
 <% end %>
 
-<%=form_for [@user, @playlist] do |f| %>
+<%=form_for [current_user, @playlist] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit "Create Playlist" %>
