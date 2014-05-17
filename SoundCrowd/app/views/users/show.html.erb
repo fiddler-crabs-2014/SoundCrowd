@@ -1,4 +1,5 @@
 <%= @user.email %>
 
-<%= link_to "My Playists", playlist_path(@user) %>
-<%= link_to "Add a new Playist", new_playlist_path(@user) %>
+<!-- Changed the names of the paths to nested names -->
+<%= link_to "My Playlists", user_playlists_path(@user) %>
+<%= link_to "Add a new Playlist", new_user_playlist_path(@user) %>
