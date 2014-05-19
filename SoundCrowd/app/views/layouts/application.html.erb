@@ -12,13 +12,12 @@
   <header class="navigation">
     <div class="menu-wrapper">
        <a href="/home" class="logo">
-      <%= image_tag "microphone.png" %> <a href="/home" style="position: absolute; top: 14px; font-size: 1.4em; color: white;">SoundCrowd</a>
-      </a>
+      <%= image_tag "microphone.png" %> <a href="/home" style="position: absolute; top: 14px; font-size: 1.4em; color: white;">SoundCrowd</a> </a>
       <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
       <div class="nav">
         <ul id="navigation-menu">
           <% if session[:user_id] %>
-            <li class="nav-link"><%= link_to 'Profile', root_path %></li>
+            <li class="nav-link"><%= link_to 'Profile', user_path(current_user) %></li>
             <li class="nav-link"><%= link_to "Sign-out", session_path(session[:user_id]), method: :delete%></li>
           <% else %>
             <li class="nav-link"><%= link_to "Sign-In", signin_path(session[:user_id])%></li>

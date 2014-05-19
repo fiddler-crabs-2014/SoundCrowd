@@ -3,7 +3,9 @@
 
 	<!-- Changed the names of the paths to nested names -->
 	<div id="play_links">
-		<%= link_to "My Playlists", user_playlists_path(@user) %>
-		<%= link_to "Add a new Playlist", new_user_playlist_path(@user) %>
+		<%= link_to "Playlists", user_playlists_path(@user) %>
+    <% if @user.id == session[:user_id] %>
+		  <%= link_to "Add a new Playlist", new_user_playlist_path(@user) %>
+    <% end %>
 	</div>
 </div>
