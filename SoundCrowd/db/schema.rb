@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20140516205237) do
   end
 
   create_table "songs", force: true do |t|
-    t.integer  "playlist_id"
     t.string   "api_name"
     t.integer  "api_id"
     t.string   "url"

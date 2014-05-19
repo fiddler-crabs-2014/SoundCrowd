@@ -3,6 +3,7 @@ development:
   encoding: unicode
   database: test-postgres_development
   pool: 5
+  template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -27,9 +28,11 @@ test:
   encoding: unicode
   database: test-postgres_test
   pool: 5
+  template: template0
 
 production:
   adapter: postgresql
   encoding: unicode
   database: test-postgres_production
   pool: 5
+  template: template0

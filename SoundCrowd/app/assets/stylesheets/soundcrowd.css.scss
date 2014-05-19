@@ -1,0 +1,113 @@
+nav {
+
+	width: 100%;
+	position: fixed;
+	margin-top: 0;
+	top: 0;
+	background-color: darkblue;
+	height: 6em;
+	h1 {
+	 color: white;
+	 text-align: center;
+	}
+}
+
+.playlists_container {
+	margin-top: 6em;
+	h1 {
+		color: darkblue;
+		text-align: center;
+	}
+	a, h3.links {
+		text-align: center;
+		color: tomato;
+		text-decoration: none;
+		&:hover{
+
+			color: lightgreen;
+		}
+	}
+
+}
+
+form {
+	width: 10em;
+	margin-left: 21em;
+	margin-top: 6em;
+	color: blue;
+}
+
+#home {
+	h1 {
+		margin-top: 2em;
+		margin-left: -0.5em;
+	}
+	color: darkblue;
+	text-align: center;
+	margin-top: 2em;
+	margin-left: 2em;
+	form {
+		margin-top: 1em;
+		color: darkblue;
+		margin-bottom: 3em;
+		input {
+			color: orange;
+			line-height: normal;
+			width: 19em;
+			margin-left: -4em;
+		}
+		input[type="submit"]{
+			color: darkblue;
+			background-color: white;
+			border-radius: 10px;
+			margin-top: 1em;
+			margin-left: -4em;
+			padding-left: 5em;
+			padding-right: 5em;
+			&:hover{
+				color: orange;
+			}
+		}
+	}
+	a {
+		margin-top: 1em;
+		margin-bottom: 2em;
+		padding: 1em;
+		border: 1px outset darkblue;
+		border-radius: 8px;
+		text-decoration: none;
+		&:hover{
+			color: orange;
+		}
+	}	
+}
+
+.new_user input[type="submit"] {
+
+	background-color: white;
+	border-radius: 10px;
+	position: relative;
+	margin-left: 2.5em;
+	margin-top: 2em;
+
+	}
+
+.user_show {
+	margin-top: 6em;
+	margin-left: 21em;
+	color: tomato;
+	a {
+		margin-left: .5em;
+		text-decoration: none;
+		border: 2px dotted tomato;
+		padding: 1em;
+		border-radius: 10px;
+		&:hover{
+			color: tomato;
+		}
+	}
+}
+#play_links {
+	margin-left: -2em;
+}
+
