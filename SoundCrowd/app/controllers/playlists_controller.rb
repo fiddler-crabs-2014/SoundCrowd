@@ -1,7 +1,8 @@
 class PlaylistsController < ApplicationController
-  before_action :signed_in_user, except: [:index]
+  before_action :signed_in_user, except: [:index, :show]
   def index
-    @playlists = Playlist.all
+    @user = User.find(params[:user_id])
+    @playlists = @user.playlists
   end
 
   def new
@@ -20,7 +21,9 @@ class PlaylistsController < ApplicationController
   end
 
   def show
+    @client = SoundCloud.new(:client_id => ENV['CLIENT_ID'])
     @playlist = Playlist.find(params[:id])
+    @songs = @playlist.songs
   end
 
   def edit
@@ -37,6 +40,15 @@ class PlaylistsController < ApplicationController
       render :edit, :notice => "Please enter"
     end
   end
+
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+    redirect_to user_playlists_path(@user.id)
+  end
+
 
   private
 

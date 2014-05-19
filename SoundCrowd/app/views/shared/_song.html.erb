@@ -1,0 +1,12 @@
+
+<h3> <%= link_to "#{song.title}", song_path(song) %> </h4>
+<h4> By: <%= song.artist %> </h4>
+
+<object height="80" width="85%">
+  <param name="movie" value="https://player.soundcloud.com/player.swf?url=<%= song.url %>&player_type=tiny{&color=ff6600&auto_play=false}"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <param name="wmode" value="transparent"></param>
+  <embed wmode="transparent" allowscriptaccess="always" height="80" width="100%" src="https://player.soundcloud.com/player.swf?url=<%= song.url %>&player_type=tiny{&color=ff6600&auto_play=false}"></embed>
+</object>
+<h4> <%= link_to "Listen on SoundCloud here", song.url %> </h4> <br><br>
+

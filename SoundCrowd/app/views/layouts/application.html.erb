@@ -8,11 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>
-		<h1>SoundCrowd!</h1>
-	</nav>
+  <nav>
+    <h1><%= link_to 'SoundCrowd', users_path %></h1>
+  </nav>
   <% if session[:user_id] %>
+    <%= link_to 'Profile', root_path %> &nbsp;
     <%= link_to "Sign-out", session_path(session[:user_id]), method: :delete%><br><br>
+    <% else %>
+    <%= link_to "Sign-In", signin_path(session[:user_id])%>
   <% end %>
 <%= yield %>
 

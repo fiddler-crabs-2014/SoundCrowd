@@ -7,12 +7,19 @@ Rails.application.routes.draw do
   end
 
   resources :songs
+
+  # resources :playlists
+  #   resources :songs, :only => [:new, :create, :destroy]
+  # end
   # match '/create', to: "sessions#create", via: 'post'
   # match '/sign_out', to: "sessions#destroy", via: 'delete'
   resources :sessions, :only => [:new, :create, :destroy]
   match '/signup', to: 'users#create', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
+  match 'search', to: 'songs#search', via: 'post'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
