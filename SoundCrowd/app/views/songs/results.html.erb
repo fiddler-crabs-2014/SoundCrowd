@@ -1,15 +1,21 @@
 <% @search_results.each do |track| %>
-  <%= track.title %>&nbsp;<%=track.artist%>&nbsp;<%= link_to "Listen Here First", track.permalink_url %> &nbsp;<%= link_to "Add this song" , songs_path(:track_title=> "#{track.title}", :track_artist => "#{track.artist}", :track_url =>"#{track.permalink_url}", :playlist_id => @playlist.id), :class => "add_song", :method => :post %>
-
+  <!-- put title and artist in span tags and add padding left/right -->
+  <span><%= track.title %></span>
+  <%=track.artist%>&nbsp;
+  <%= link_to "Listen Here First", track.permalink_url %>
+  <!-- add helper method to get the song_path with that big ass hash -->
+  &nbsp;<%= link_to "Add this song" , songs_path(:track_title=> "#{track.title}", :track_artist => "#{track.artist}", :track_url =>"#{track.permalink_url}", :playlist_id => @playlist.id), :class => "add_song", :method => :post %>
 
   <div class="add_song_form" style="display: none;">
     <%= simple_form_for @song do |f| -%>
       <p>What would you like to save this song as?</p>
       Title: <%= f.text_field :title, required: true %>
       Artist: <%= f.text_field :artist, required: true %>
-      <%= f.hidden_field :playlist, :value => @playlist.id %>
+
+      <%= f.hidden_field :playlist_id, :value => @playlist.id %>
       <%= f.hidden_field :url, :value => track.permalink_url %>
       <%= f.hidden_field :track, :value => track %>
+
       <%= f.submit %>
     <% end -%>
   </div> <br>

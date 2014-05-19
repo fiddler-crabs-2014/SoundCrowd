@@ -1,15 +1,16 @@
 require 'spec_helper'
 
 describe UsersController do
-
-  context "#index" do
+  describe "#index" do
     it "is successful" do
       get :index
       expect(response).to be_success
     end
+
+    it "sets users variable"
   end
 
-  context "#show" do
+  describe "#show" do
     let(:user) {create :user}
     it "is successful" do
       get :show, :id => user.id
@@ -17,14 +18,14 @@ describe UsersController do
     end
   end
 
-  context "#new" do
+  describe "#new" do
     it "is successful" do
       get :new
       expect(response).to be_success
     end
   end
 
-  context "#create" do
+  describe "#create" do
     let(:user){ create :user }
     let!(:previous_user){ User.create(email: "example@gmail.com", password:"secret" ) }
     it "will create a user with valid info" do

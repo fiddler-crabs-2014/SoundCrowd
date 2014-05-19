@@ -1,17 +1,20 @@
 class PlaylistsController < ApplicationController
   before_action :signed_in_user, except: [:index, :show]
+
   def index
     @user = User.find(params[:user_id])
     @playlists = @user.playlists
   end
 
   def new
-    @playlist = current_user.playlists.new
+    @playlist = current_user.playlists.build #use build instead of new
   end
 
   def create
-    @playlist = current_user.playlists.new(playlist_params)
+    @playlist = current_user.playlists.build(playlist_params)
+
     if @playlist.save
+      # NO COMMENTS!!!
       #corrected nested path name
       #playlists_paths to user_playlists_path
       redirect_to user_playlists_path
@@ -55,5 +58,4 @@ class PlaylistsController < ApplicationController
     def playlist_params
       params.require(:playlist).permit(:name)
     end
-
 end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  # do we need or want this?
   def index
     @users = User.all
   end
@@ -19,7 +19,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    begin 
+    # @user = User.where(id: params[:id]).first => return nil
+
+    begin
       @user = User.find(params[:id])
     rescue
       redirect_to root_path

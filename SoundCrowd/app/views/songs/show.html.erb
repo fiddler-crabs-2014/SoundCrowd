@@ -2,8 +2,12 @@
 <h3> "<%= @song.title %>" </h3>
 <h4> By: <%= @song.artist %> </h4>
 
+<!-- share this with shared/_song partial -->
+<%= render partial: 'shared/song', song: @song %>
+
+<!-- helper method for the player query params/url -->
 <object height="80" width="85%">
-  <param name="movie" value="https://player.soundcloud.com/player.swf?url=<%= @song.url %>&player_type=tiny{&color=ff6600&auto_play=false}"></param>
+  <param name="movie" value="<%= sound_cloud_player_url(@song) %>"></param>
   <param name="allowscriptaccess" value="always"></param>
   <param name="wmode" value="transparent"></param>
   <embed wmode="transparent" allowscriptaccess="always" height="80" width="100%" src="https://player.soundcloud.com/player.swf?url=<%= @song.url %>&player_type=tiny{&color=ff6600&auto_play=false}"></embed>

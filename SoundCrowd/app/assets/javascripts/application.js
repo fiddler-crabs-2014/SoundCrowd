@@ -17,8 +17,10 @@
 $(document).ready(function(){
   $('.add_song').on('click', function(e) {
     e.preventDefault();
+
     $(this).hide();
     $(this).next('.add_song_form').show();
+
     return false;
   });
 });

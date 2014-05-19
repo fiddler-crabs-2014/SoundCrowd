@@ -2,6 +2,7 @@
   <%= flash[:notice] %>
 <% end %>
 
+<!-- this is the same as edit -->
 <%=form_for [current_user, @playlist] do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :name %>
