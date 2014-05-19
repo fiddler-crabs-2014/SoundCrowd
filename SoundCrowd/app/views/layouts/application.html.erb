@@ -8,16 +8,52 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <h1><%= link_to 'SoundCrowd', users_path %></h1>
-  </nav>
-  <% if session[:user_id] %>
-    <%= link_to 'Profile', root_path %> &nbsp;
-    <%= link_to "Sign-out", session_path(session[:user_id]), method: :delete%><br><br>
-    <% else %>
-    <%= link_to "Sign-In", signin_path(session[:user_id])%>
-  <% end %>
+
+  <header class="navigation">
+    <div class="menu-wrapper">
+       <a href="/home" class="logo">
+      <%= image_tag "microphone.png" %> <a href="/home" style="position: absolute; top: 14px; font-size: 1.4em; color: white;">SoundCrowd</a> </a>
+      <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
+      <div class="nav">
+        <ul id="navigation-menu">
+          <% if session[:user_id] %>
+            <li class="nav-link"><%= link_to 'Profile', user_path(current_user) %></li>
+            <li class="nav-link"><%= link_to "Sign-out", session_path(session[:user_id]), method: :delete%></li>
+          <% else %>
+            <li class="nav-link"><%= link_to "Sign-In", signin_path(session[:user_id])%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </header>
 <%= yield %>
 
 </body>
+
+<script>
+  $(function() {
+    var menu = $('#navigation-menu');
+    var menuToggle = $('#js-mobile-menu');
+    var signUp = $('.sign-up');
+
+    $(menuToggle).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle(function(){
+        if(menu.is(':hidden')) {
+          menu.removeAttr('style');
+        }
+      });
+    });
+
+   
+ // underline under the active nav item
+    $(".nav .nav-link").click(function() {
+      $(".nav .nav-link").each(function() {
+        $(this).removeClass("active-nav-item");
+      });
+      $(this).addClass("active-nav-item"); 
+      $(".nav .more").removeClass("active-nav-item");
+    });
+  });
+</script>
 </html>
