@@ -61,7 +61,7 @@ class SongsController < ApplicationController
     puts "QUERY BELOW!!!!!!!!!!!:"
     puts query
     client = SoundCloud.new(:client_id => ENV['CLIENT_ID'])
-    searched_tracks = client.get('/tracks', :q => query, limit: 2)
+    searched_tracks = client.get('/tracks', :q => query, limit: 10)
   end
 
 end
