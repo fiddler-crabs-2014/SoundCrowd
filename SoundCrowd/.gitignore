@@ -19,3 +19,9 @@
 
 # Ignore the db/schema file
 db/schema.rb
+
+# Ignore the test coverage results
+coverage/*
+
+# Ignore the dotenv file
+.env

@@ -13,6 +13,6 @@
  *= require_tree .
  *= require_self
  */
-*{
-  font-family: 'Pacifico', cursive;
+{
+  /*font-family: 'Pacifico', cursive;*/
 }

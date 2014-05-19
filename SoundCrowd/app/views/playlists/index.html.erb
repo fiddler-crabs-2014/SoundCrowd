@@ -1,6 +1,13 @@
 <h1> Playlists </h1>
+
+<% if @user.id == session[:user_id] %>
+  <%= link_to "Add a new Playlist", new_user_playlist_path(@user) %>
+<% end %>
+
+
 <% @playlists.each do |playlist| %>
 
-<h3><%= link_to playlist.name, [current_user, playlist] %></h3>
+<h3><%= link_to playlist.name, user_playlist_path(playlist.user, playlist) %>
+  <% if @user.id == session[:user_id] %> <%= link_to "(Delete)", user_playlist_path(playlist.user, playlist), method: :delete %><% end %></h3>
 <% end %>
 

@@ -1,3 +1,9 @@
-<%= @playlist.name %>
-<%= link_to "Edit", edit_user_playlist_path(@playlist.user, @playlist)%>
-<%= link_to "Add a new Playist", new_user_playlist_path %>
+<h2><%= @playlist.name %></h2>
+
+<% if @playlist.user_id == session[:user_id] %>
+  <p>(<%= link_to "Edit", edit_user_playlist_path(@playlist.user, @playlist)%> &nbsp;&nbsp;&nbsp;
+  <%= link_to "Add Song", new_song_path(@playlist) %>)</p> <br><br>
+<% end %>
+
+
+<%= render partial: 'shared/song', collection: @songs %>

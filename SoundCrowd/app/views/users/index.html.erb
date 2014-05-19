@@ -1,11 +1,11 @@
-<%= form_for @session, url: { action: 'create_session' } do |f| %>
-    <%= f.label :email  %>
-    <%= f.text_field :email %>
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-    <%= f.submit("Sign In") %>
-  <% end %>
+<h3>Checkout some of our user's profiles and playlists</h3>
+<% @users.each do |user| %>
+  <p>
+    <%= link_to "#{user.email}", user_path(user) %>
+  </p>
+<% end %>
 
-
-  <%= link_to "Register", new_user_path %>
-
+<br>
+<br>
+<h3>Or checkout all of the songs added so far!</h3>
+<%= link_to "All Songs!", songs_path %>

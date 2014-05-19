@@ -1,0 +1,11 @@
+<h2>Add Song to <%= @playlist.name %> </h2>
+
+<h3> Search SoundCloud for song:</h3>
+<%= form_tag('/search', :id => 'search') do -%>
+  <%= text_field_tag :search%>
+  <%= hidden_field_tag :playlist_id, @playlist.id %>
+  <div><%= submit_tag 'Search' %></div>
+<% end -%>
+
+
+
